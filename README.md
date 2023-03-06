@@ -1,3 +1,8 @@
+<h1 align="center"> 
+	🚧  React Select 🚀 Em construção...  🚧
+</h1>
+
+
 # react-fundamentos
 Repositório criado para o 5º módulo do curso Jstack
 
@@ -24,6 +29,9 @@ Criando aplicativo React
 
 import React from 'react'
 import ReactDOM  from 'react-dom'
+```bash
+yarn add antd
+```
 
 ReactDOM.render(
     <h1 id="title">Olá Mundo!</h1>,
@@ -34,14 +42,26 @@ ReactDOM.render(
 
   4.1 - npm i webpack webpack-cli --save-dev
   4.2 - Criar na raiz do projeto: .webpack.config.js 
-        4.2.1 - const path = require('path')
+        4.2.1 -
+```javascript
+                const path = require('path')
+
+                const path = require('path')
+                const HtmlWebpackPlugin = require('html-webpack-plugin')
+                const { CleanWebpackPlugin} = require('clean-webpack-plugin')
 
                 module.exports = {
-                    entry: path.resolve(__dirname, 'src' , 'index.js'),
+                    entry: path.resolve(__dirname, 'transpiled' , 'index.js'),
                     output: {
                         path: path.resolve(__dirname, 'build'),
-                        filename: 'bundle.js'
+                        filename: 'bundle[hash].js'
                     },
-                };
-
+                    plugins: [
+                        new HtmlWebpackPlugin({
+                            template: path.resolve(__dirname, 'public' , 'index.html')
+                        }),
+                        new CleanWebpackPlugin()
+                    ]
+                }
+```
                 --npx webpack
