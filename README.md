@@ -2,24 +2,23 @@
 	🚧  React Select 🚀 Em construção...  🚧
 </h1>
 
-
 # react-fundamentos
+
 Repositório criado para o 5º módulo do curso Jstack
 
-
-Configurando o babel 
+Configurando o babel
 
 -- Dev Dependencies
-  "@babel/cli": "^7.21.0",
-    "@babel/core": "^7.21.0",
-    "@babel/preset-env": "^7.20.2",
-    "@babel/preset-react": "^7.18.6"
+"@babel/cli": "^7.21.0",
+"@babel/core": "^7.21.0",
+"@babel/preset-env": "^7.20.2",
+"@babel/preset-react": "^7.18.6"
 
 npx babel -d build : Gera o código transpilado
 
 ====================
 
-Criando aplicativo React
+Criando aplicativo React - PARTE 1
 
 1º - Criar pasta public e o Index.html dentro dela com uma Div com id Root
 
@@ -28,49 +27,84 @@ Criando aplicativo React
 3º - Iniciando o aplicativo react :
 
 import React from 'react'
-import ReactDOM  from 'react-dom'
+import ReactDOM from 'react-dom'
+
 ```bash
 yarn add antd
 ```
 
 ReactDOM.render(
-    <h1 id="title">Olá Mundo!</h1>,
-    document.getElementById('root')
+
+<h1 id="title">Olá Mundo!</h1>,
+document.getElementById('root')
 );
 
-4º -  Gerando o Bundle com webPakc
+4º - Gerando o Bundle com webPakc
 
-  4.1 - npm i webpack webpack-cli --save-dev
-  4.2 - Criar na raiz do projeto: .webpack.config.js 
-        4.2.1 -
+4.1 - npm i webpack webpack-cli --save-dev
+4.2 - Criar na raiz do projeto: .webpack.config.js
+4.2.1 -
+
 ```javascript
-                const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const { CleanWebpackPlugin} = require('clean-webpack-plugin')
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
-    entry: path.resolve(__dirname, 'src' , 'index.js'),
-    output: {
-        path: path.resolve(__dirname, 'build'),
-        filename: 'bundle[hash].js'
-    },
-    plugins: [
-        new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, 'public' , 'index.html')
-        }),
-        new CleanWebpackPlugin()
+  entry: path.resolve(__dirname, "src", "index.js"),
+  output: {
+    path: path.resolve(__dirname, "build"),
+    filename: "bundle[hash].js",
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "public", "index.html"),
+    }),
+    new CleanWebpackPlugin(),
+  ],
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: "babel-loader",
+      },
     ],
-    module: {
-        rules: [
-            {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                use: 'babel-loader',
-            },
-        ],
-    }
-}
+  },
+  mode: "development",
+  devServer: {
+    port: 3000,
+  },
+};
 ```
+
                 --npx webpack
 
                 4.2.2 - Criando Loaders
+
+5º - Criando um servidor local de desenvolvimento
+
+npm i -D webpack-dev-server
+
+Criando aplicativo React - PARTE 2
+
+Fundamentos do react
+
+Criando o primeiro componente :
+
+//Functional Components
+function
+
+```javascript
+import React from "react";
+
+const App = () => {
+  return (
+    <div>
+      <h1>Component App</h1>
+    </div>
+  );
+};
+
+export default App;
+```
