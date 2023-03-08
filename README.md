@@ -88,7 +88,7 @@ npm i -D webpack-dev-server
 
 Criando aplicativo React - PARTE 2
 
-Fundamentos do react
+### Fundamentos do react
 
 Criando o primeiro componente :
 
@@ -107,4 +107,55 @@ const App = () => {
 };
 
 export default App;
+```
+
+//Props
+
+Componentes em react usam props (propreties) para se comunicar entre si. Todo componente Pai pode passar informações para seus filhos passando props para eles. 
+
+```javascript
+      <div>
+        <Post
+          likes={20}
+          title="Primeiro Artigo"
+          subtitle="Subtitle do primeiro"
+          paragraph="Lorem Ipsum is simply dummy text of the printing."
+        />
+      </div>
+```
+
+No exemplo acima, o componente "Post" recebe as "props" como se fossem atributos HTML, esses valores (propriedades) passados pelo componente pai, pode ser acessado no component filho da seguinte forma: 
+
+```javascript
+const Post = ({ title, subtitle, paragraph, likes }) => {
+  return (
+    <>
+      <h1>{title}</h1>
+      <h3>{subtitle}</h3>
+      <p>{paragraph}</p>
+      Likes: {likes / 2}
+      <hr/>
+    </>
+  );
+};
+```
+
+Desestruturando o objeto no argumento da função, podemos utilizar a sintexe do JSX para rederizar os valores.
+
+//Renderizando listas
+
+Para renderizar components em listas utilizandos o método Map do javascript.
+
+```javascript
+{posts.map((post)=>(
+        <>
+        <Post
+        key={post.title}
+        likes={post.likes}
+        title={post.title}
+        subtitle={post.subtitle}
+        paragraph={post.paragraph}
+        />
+        </>
+      ))}
 ```
