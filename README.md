@@ -4,9 +4,12 @@
 
 ![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
 
+<p align="center">
+    <img width="200" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png">
+    <h1 align="center">Fundamentos do React </h1>
+    Repositório criado para o 5º módulo do curso Jstack
+</p>
 
-# react-fundamentos
-<h1 align="center">Repositório criado para o 5º módulo do curso Jstack</h1>
 
 
 Configurando o babel
