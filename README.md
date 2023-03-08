@@ -2,9 +2,12 @@
 	🚧  React Select 🚀 Em construção...  🚧
 </h1>
 
-# react-fundamentos
+![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
 
-Repositório criado para o 5º módulo do curso Jstack
+
+# react-fundamentos
+<h1 align="center">Repositório criado para o 5º módulo do curso Jstack</h1>
+
 
 Configurando o babel
 
@@ -33,11 +36,13 @@ import ReactDOM from 'react-dom'
 yarn add antd
 ```
 
+```javascript
 ReactDOM.render(
 
 <h1 id="title">Olá Mundo!</h1>,
 document.getElementById('root')
 );
+```
 
 4º - Gerando o Bundle com webPakc
 
