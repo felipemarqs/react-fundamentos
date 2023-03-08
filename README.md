@@ -207,3 +207,5 @@ Para renderizar components em listas utilizandos o método Map do javascript.
 ## Funções de Callback via Props
 
 ## Conditional Rendering
+
+## Context API

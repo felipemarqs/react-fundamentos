@@ -1,18 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
+import PostHeader from "./PostHeader.jsx";
 
-const Post = ({ id,title, subtitle, paragraph, likes , onRemove, read, onRead}) => {
-
-  if (read) {
-    return  <h2>{title} Já lido</h2> 
-   
-  }
-
+const Post = ({ id, title, subtitle, paragraph, likes, onRemove, read ,theme}) => {
+  console.log(theme)
   return (
     <>
       <article>
-        { read ? <s><strong>{title}</strong></s> : <strong>{title}</strong>  }
-        <button onClick={() => onRemove(id)}>Remove</button>
+        <PostHeader id={id} title={title} onRemove={onRemove} read={read} />
         <br />
         <small>{subtitle}</small>
         <br />
@@ -20,13 +15,12 @@ const Post = ({ id,title, subtitle, paragraph, likes , onRemove, read, onRead}) 
         Likes: {likes / 2}
         <hr />
       </article>
-
     </>
   );
 };
 
 Post.propTypes = {
   likes: PropTypes.number.isRequired,
-}
+};
 
 export default Post;
