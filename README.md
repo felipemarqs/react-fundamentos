@@ -13,7 +13,7 @@
 - [Introdução](#introdução)
 - [React](#React)
 - [Babel](#Babel)
-- [Contribuição](#contribuição)
+- [Inicializando o React](#Inicializando)
 - [Licença](#licença)
 
 # Introdução
@@ -31,9 +31,7 @@ O que é o React?
 React é uma biblioteca Javascript utilizada para a criação de interfaces de usuários. Esse projeto aborda sobre a sua "versão" para a criação de SPAs (Single Page Application). O React foi criado pelo Facebook e é amplamente utilizado por desenvolvedores em todo o mundo.
 
 
-# 1º Passo
-
-## Babel
+# Babel
 
 O que é o Babel e porquê ele será necessário?
 
@@ -47,81 +45,87 @@ $ npm install @babel/cli @babel/core @babel/preset-env @babel/preset-react --sav
 $ npx babel -d build # Gera o código transpilado
 ```
 
-# 2º Passo
+# Inicializando
 
-## 
 
-====================
+### 1. Criar pasta public e o Index.html dentro dela com uma Div com id Root
 
-Criando aplicativo React - PARTE 1
-
-1º - Criar pasta public e o Index.html dentro dela com uma Div com id Root
-
-2º - Instalando o react e o React Dom | react react-dom
-
-3º - Iniciando o aplicativo react :
-
-import React from 'react'
-import ReactDOM from 'react-dom'
+### 2. - Instalando o react e o React Dom | react react-dom
 
 ```bash
-yarn add antd
+$ npm install react react-dom
 ```
 
-```javascript
-ReactDOM.render(
+### 3. - Iniciando o aplicativo react :
 
-<h1 id="title">Olá Mundo!</h1>,
-document.getElementById('root')
-);
+```jsx
+      import React from 'react'
+      import ReactDOM from 'react-dom'
+
+
+      ReactDOM.render(
+
+      <h1 id="title">Olá Mundo!</h1>,
+      document.getElementById('root')
+      );
 ```
 
-4º - Gerando o Bundle com webPakc
+### 4. Gerando o Bundle com webPack
 
-4.1 - npm i webpack webpack-cli --save-dev
-4.2 - Criar na raiz do projeto: .webpack.config.js
-4.2.1 -
+  4.1 -
+  ```bash
+      $npm i webpack webpack-cli --save-dev
+  ``` 
+  
+    4.2 - Criar na raiz do projeto: .webpack.config.js  
 
-```javascript
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+    4.2.1 -
+        
+  ```javascript
+  const path = require("path");
+  const HtmlWebpackPlugin = require("html-webpack-plugin");
+  const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
-module.exports = {
-  entry: path.resolve(__dirname, "src", "index.js"),
-  output: {
-    path: path.resolve(__dirname, "build"),
-    filename: "bundle[hash].js",
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "public", "index.html"),
-    }),
-    new CleanWebpackPlugin(),
-  ],
-  module: {
-    rules: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: "babel-loader",
-      },
+  module.exports = {
+    entry: path.resolve(__dirname, "src", "index.js"),
+    output: {
+      path: path.resolve(__dirname, "build"),
+      filename: "bundle[hash].js",
+    },
+    plugins: [
+      new HtmlWebpackPlugin({
+        template: path.resolve(__dirname, "public", "index.html"),
+      }),
+      new CleanWebpackPlugin(),
     ],
-  },
-  mode: "development",
-  devServer: {
-    port: 3000,
-  },
-};
-```
+    module: {
+      rules: [
+        {
+          test: /\.js$/,
+          exclude: /node_modules/,
+          use: "babel-loader",
+        },
+      ],
+    },
+    mode: "development",
+    devServer: {
+      port: 3000,
+    },
+  };
+  ```
+  4.2.2 - Executando o webpack
+  ```bash
+    $ npx webpack
+  ```
+                
 
-                --npx webpack
+              
 
-                4.2.2 - Criando Loaders
+### 5. Criando um servidor local de desenvolvimento
 
-5º - Criando um servidor local de desenvolvimento
-
-npm i -D webpack-dev-server
+ ```bash
+  $npm i -D webpack-dev-server
+ ```
 
 Criando aplicativo React - PARTE 2
 
