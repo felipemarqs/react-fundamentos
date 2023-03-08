@@ -1,8 +1,6 @@
 <h1 align="center"> 
-	🚧  React Select 🚀 Em construção...  🚧
+	🚧  Fundamentos do React 🚀 Em construção...  🚧
 </h1>
-
-![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
 
 <p align="center">
     <img width="200" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png">
@@ -10,17 +8,48 @@
     Repositório criado para o 5º módulo do curso Jstack
 </p>
 
+## Índice
+
+- [Introdução](#introdução)
+- [React](#React)
+- [Babel](#Babel)
+- [Contribuição](#contribuição)
+- [Licença](#licença)
+
+# Introdução
+
+Bem-vindo(a) ao meu projeto sobre os fundamentos do React!
+
+Esse projeto é uma introdução aos fundamentos do React, onde eu venho apresentar os conceitos básicos, incluindo componentes, propriedades, estados, eventos e mais.
+Também exploraremos as melhores práticas para escrever o código React.
+Se você é novo no React, espero que este projeto seja um proveitoso aprendizado.
+
+# React
+
+O que é o React?
+
+React é uma biblioteca Javascript utilizada para a criação de interfaces de usuários. Esse projeto aborda sobre a sua "versão" para a criação de SPAs (Single Page Application). O React foi criado pelo Facebook e é amplamente utilizado por desenvolvedores em todo o mundo.
 
 
-Configurando o babel
+# 1º Passo
 
--- Dev Dependencies
-"@babel/cli": "^7.21.0",
-"@babel/core": "^7.21.0",
-"@babel/preset-env": "^7.20.2",
-"@babel/preset-react": "^7.18.6"
+## Babel
 
-npx babel -d build : Gera o código transpilado
+O que é o Babel e porquê ele será necessário?
+
+O Babel é uma ferramenta de transpilação de código, ele permite que os desenvolvedores escrevam códigos Javascript utilizando uma sintaxe mais recente mas ainda assim garantir que o cógido possa ser executado em navegadores mais antigos.
+
+### 🔨 Configurando o Babel
+
+```bash
+$ npm init -y # Inicia o projeto com npm
+$ npm install @babel/cli @babel/core @babel/preset-env @babel/preset-react --save-dev # Instala as dependências de desenvolvimento do Babel
+$ npx babel -d build # Gera o código transpilado
+```
+
+# 2º Passo
+
+## 
 
 ====================
 
