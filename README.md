@@ -77,9 +77,9 @@ $ npm install react react-dom
       $npm i webpack webpack-cli --save-dev
   ``` 
   
-    4.2 - Criar na raiz do projeto: .webpack.config.js  
+4.2 - Criar na raiz do projeto: .webpack.config.js  
 
-    4.2.1 -
+4.2.1 -
         
   ```javascript
   const path = require("path");
