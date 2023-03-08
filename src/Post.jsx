@@ -1,11 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Post = ({ id,title, subtitle, paragraph, likes , onRemove}) => {
+const Post = ({ id,title, subtitle, paragraph, likes , onRemove, read, onRead}) => {
+
+  if (read) {
+    return  <h2>{title} Já lido</h2> 
+   
+  }
+
   return (
     <>
       <article>
-        <strong>{title}</strong>
+        { read ? <s><strong>{title}</strong></s> : <strong>{title}</strong>  }
         <button onClick={() => onRemove(id)}>Remove</button>
         <br />
         <small>{subtitle}</small>

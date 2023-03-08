@@ -205,3 +205,5 @@ Para renderizar components em listas utilizandos o método Map do javascript.
 ## Trabalhando com States aqui ----
 
 ## Funções de Callback via Props
+
+## Conditional Rendering

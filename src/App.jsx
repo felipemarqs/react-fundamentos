@@ -12,21 +12,24 @@ const App = () => {
       likes:20,
       title: "#1 Post",
       subtitle: "Substitle do primeiro",
-      paragraph:"Lorem Ipsum is simply dummy text of the printing."
+      paragraph:"Lorem Ipsum is simply dummy text of the printing.",
+      read: false
     },
     {
       id: Math.random(),
       likes:20,
       title: "#2 Post",
       subtitle: "Substitle do segundo",
-      paragraph:"Lorem Ipsum is simply dummy text of the printing."
+      paragraph:"Lorem Ipsum is simply dummy text of the printing.",
+      read: true
     },
     {
       id: Math.random(),
       likes:20,
       title: "#3 Post",
       subtitle: "Substitle do terceiro",
-      paragraph:"Lorem Ipsum is simply dummy text of the printing."
+      paragraph:"Lorem Ipsum is simply dummy text of the printing.",
+      read: false
     }
   ])
 
@@ -35,8 +38,9 @@ const App = () => {
     setPosts((prevState) => (
       prevState.filter(post => post.id !== postId)
       ))
-
   }
+
+ 
   const handleRefresh = () => {
    
     setPosts((prevState) => [
@@ -46,7 +50,8 @@ const App = () => {
         likes:45,
         title: `#${prevState.length + 1} Post`,
         substitle: "Subtitle #${posts.length + 1}",
-        paragraph:"Lorem Ipsum is simply dummy text of the printing."
+        paragraph:"Lorem Ipsum is simply dummy text of the printing.",
+        read: false
       }
      ])
   }
@@ -70,6 +75,7 @@ const App = () => {
         subtitle={post.subtitle}
         paragraph={post.paragraph}
         id={post.id}
+        read={post.read}
         />
         </>
       ))}
