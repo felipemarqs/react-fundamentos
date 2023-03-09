@@ -1,14 +1,9 @@
 import React, { useState, useContext } from "react";
-import Post from "./Post.jsx";
-import Header from "./Header.jsx";
-import {ThemeProvider,ThemeContext} from "./ThemeContext.jsx";
-
-
-
+import Post from "../Post/Post.jsx";
+import Header from "../Header/Header.jsx";
+import { ThemeProvider, ThemeContext } from "../../context/ThemeContext.jsx";
 
 const App = () => {
-  
-
   const [posts, setPosts] = useState([
     {
       id: Math.random(),
@@ -17,7 +12,7 @@ const App = () => {
       subtitle: "Substitle do primeiro",
       paragraph: "Lorem Ipsum is simply dummy text of the printing.",
       read: false,
-      removed: true
+      removed: true,
     },
     {
       id: Math.random(),
@@ -26,7 +21,7 @@ const App = () => {
       subtitle: "Substitle do segundo",
       paragraph: "Lorem Ipsum is simply dummy text of the printing.",
       read: true,
-      removed: false
+      removed: false,
     },
     {
       id: Math.random(),
@@ -35,19 +30,17 @@ const App = () => {
       subtitle: "Substitle do terceiro",
       paragraph: "Lorem Ipsum is simply dummy text of the printing.",
       read: false,
-      removed: false
+      removed: false,
     },
   ]);
 
   const handleRemovePost = (postId) => {
     console.log({ postId });
-    setPosts((prevState) => prevState.map(
-      post => ( 
-        post.id === postId 
-        ?  {...post, removed: true}
-        : {...post}
-        )
-    ));
+    setPosts((prevState) =>
+      prevState.map((post) =>
+        post.id === postId ? { ...post, removed: true } : { ...post }
+      )
+    );
   };
 
   const handleRefresh = () => {
