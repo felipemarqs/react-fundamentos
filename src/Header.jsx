@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import Button from "./Button.jsx";
 import { ThemeContext } from "./ThemeContext.jsx";
+import './Header.css'
 
 const Header = ({ title, children, theme }) => {
   const { onToggleTheme } = useContext(ThemeContext);
