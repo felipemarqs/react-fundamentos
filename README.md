@@ -50,13 +50,13 @@ $ npx babel -d build # Gera o código transpilado
 
 ### 1. Criar pasta public e o Index.html dentro dela com uma Div com id Root
 
-### 2. - Instalando o react e o React Dom | react react-dom
+### 2. Instalando o react e o React Dom | react react-dom
 
 ```bash
 $ npm install react react-dom
 ```
 
-### 3. - Iniciando o aplicativo react :
+### 3. Iniciando o aplicativo react :
 
 ```jsx
       import React from 'react'
@@ -133,8 +133,7 @@ Criando aplicativo React - PARTE 2
 
 Criando o primeiro componente :
 
-//Functional Components
-function
+> Functional Components
 
 ```javascript
 import React from "react";
@@ -150,7 +149,7 @@ const App = () => {
 export default App;
 ```
 
-//Props
+> Props
 
 Componentes em react usam props (propreties) para se comunicar entre si. Todo componente Pai pode passar informações para seus filhos passando props para eles. 
 
@@ -183,7 +182,7 @@ const Post = ({ title, subtitle, paragraph, likes }) => {
 
 Desestruturando o objeto no argumento da função, podemos utilizar a sintexe do JSX para rederizar os valores.
 
-//Renderizando listas
+> Renderizando listas
 
 Para renderizar components em listas utilizandos o método Map do javascript.
 
@@ -201,8 +200,30 @@ Para renderizar components em listas utilizandos o método Map do javascript.
       ))}
 ```
 
+> Trabalhando com Estados
 
-## Trabalhando com States aqui ----
+Em React, um estado é um objeto que comtém dados que podem mudar ao longo do tempo. O estado é um dos conceitos fundamentais do React.
+Para criar um estado é necessário usar a função 'useState'. O useState retorna um par de valores, o primeiro valor é o valor do estado atual e o segundo valor é uma função que é utilizada para atualizar o estado.
+
+```jsx
+import React, { useState } from 'react';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
+  );
+}
+```
+
+No exemplo acima, o estado count é definido com o valor inicial 0 usando a função useState. A função setCount pode ser usada para atualizar o valor do estado count sempre que o botão é clicado
+
 
 ## Funções de Callback via Props
 
