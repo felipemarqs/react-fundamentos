@@ -1,12 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 import PostHeader from "./PostHeader.jsx";
+import styles from "./Post.scss";
 
-const Post = ({ id, title, subtitle, paragraph, likes, onRemove, read ,theme}) => {
-  console.log(theme)
+const Post = ({ id, title, subtitle, paragraph, likes, onRemove, read, removed }) => {
   return (
     <>
-      <article>
+      <article className={
+        !removed ?  styles.post : styles.postDeleted
+      }>
         <PostHeader id={id} title={title} onRemove={onRemove} read={read} />
         <br />
         <small>{subtitle}</small>

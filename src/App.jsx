@@ -17,6 +17,7 @@ const App = () => {
       subtitle: "Substitle do primeiro",
       paragraph: "Lorem Ipsum is simply dummy text of the printing.",
       read: false,
+      removed: true
     },
     {
       id: Math.random(),
@@ -25,6 +26,7 @@ const App = () => {
       subtitle: "Substitle do segundo",
       paragraph: "Lorem Ipsum is simply dummy text of the printing.",
       read: true,
+      removed: false
     },
     {
       id: Math.random(),
@@ -33,12 +35,19 @@ const App = () => {
       subtitle: "Substitle do terceiro",
       paragraph: "Lorem Ipsum is simply dummy text of the printing.",
       read: false,
+      removed: false
     },
   ]);
 
   const handleRemovePost = (postId) => {
     console.log({ postId });
-    setPosts((prevState) => prevState.filter((post) => post.id !== postId));
+    setPosts((prevState) => prevState.map(
+      post => ( 
+        post.id === postId 
+        ?  {...post, removed: true}
+        : {...post}
+        )
+    ));
   };
 
   const handleRefresh = () => {
@@ -68,7 +77,7 @@ const App = () => {
       {posts.map((post) => (
         <>
           <Post
-            
+            removed={post.removed}
             theme={theme}
             key={post.id}
             onRemove={handleRemovePost}
