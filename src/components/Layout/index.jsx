@@ -4,12 +4,12 @@ import Header from '../Header/index.jsx'
 import PostList from '../PostList/index.jsx'
 import Footer from '../Footer/index.jsx'
 
-const Layout = () => {
+const Layout = ({onToggleTheme, theme}) => {
     return (
         <>
-            <Header/>
+            <Header onToggleTheme={onToggleTheme} theme={theme}/>
             <PostList/>
-            <Footer/>
+            <Footer onToggleTheme={onToggleTheme} theme={theme}/>
         </>
     )
 }
