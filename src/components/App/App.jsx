@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import Post from "../Post/Post.jsx";
 import Header from "../Header/Header.jsx";
 import { ThemeProvider, ThemeContext } from "../../context/ThemeContext.jsx";
-
+import {Title} from './styles.js'
 const App = () => {
   const [posts, setPosts] = useState([
     {
@@ -61,10 +61,11 @@ const App = () => {
   return (
     <ThemeProvider>
       <Header title="Felipe's Blog">
-        <h2>
+        <Title as ="h2">
           Posts da semana
-          <button onClick={handleRefresh}>Atualizar</button>
-        </h2>
+          
+        </Title>
+        <button onClick={handleRefresh}>Atualizar</button>
       </Header>
       <h2>{theme}</h2>
       {posts.map((post) => (
