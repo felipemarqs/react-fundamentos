@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import PostHeader from "./PostHeader.jsx";
 
-import { Subtitle , Rate, Paragraph}  from './styles.js'
+import { Subtitle , Rate, Paragraph, Container}  from './styles.js'
 
 
 const Post = ({
@@ -17,7 +17,7 @@ const Post = ({
 }) => {
   return (
     <>
-      <article>
+      <Container removed={removed}>
         <PostHeader id={id} title={title} onRemove={onRemove} read={read} />
     
         <Subtitle>{subtitle}</Subtitle>
@@ -25,7 +25,7 @@ const Post = ({
         <Paragraph>{paragraph}</Paragraph>
         <Rate>👍: {likes / 2}</Rate>
         <hr />
-      </article>
+      </Container>
     </>
   );
 };
