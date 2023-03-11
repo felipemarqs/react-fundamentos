@@ -1,12 +1,14 @@
-import React from 'react';
+import React from "react";
 
-import { Container } from './styles';
+import { Container } from "./styles";
 
-export default function Footer({onToggleTheme, theme}) {
+export default function Footer({ onToggleTheme, selectedTheme }) {
   return (
     <Container>
       <span>Felipe's Blog. Todos os direitos reservados.</span>
-      <button type="button" onClick={onToggleTheme}>{theme === 'dark' ? '🌞' : '🌙'}</button>
+      <button type="button" onClick={onToggleTheme}>
+        {selectedTheme === "dark" ? "🌞" : "🌙"}
+      </button>
     </Container>
   );
 }

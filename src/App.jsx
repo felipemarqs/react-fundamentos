@@ -27,7 +27,7 @@ const App = () => {
   return (
     <ThemeProvider theme={currentTheme}>
       <GlobalStyle/>
-      <Layout onToggleTheme={handleToggleTheme} theme={theme}/>
+      <Layout onToggleTheme={handleToggleTheme} selectedTheme={theme}/>
     </ThemeProvider>
   );
 };
