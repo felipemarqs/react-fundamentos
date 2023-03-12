@@ -11,6 +11,7 @@ import { ThemeProvider } from "styled-components";
 import GlobalStyle from "./styles/global.js";
 import Layout from "./components/Layout/index.jsx";
 
+
 import themes from "./styles/themes/index.js";
 
 const App = () => {
