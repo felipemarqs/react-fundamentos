@@ -1,4 +1,10 @@
-import React, { useState, useMemo, useLayoutEffect } from "react";
+import React, {
+  useState,
+  useMemo,
+  useLayoutEffect,
+  useEffect,
+  useRef,
+} from "react";
 
 import { ThemeProvider } from "styled-components";
 
@@ -10,9 +16,14 @@ import themes from "./styles/themes/index.js";
 const App = () => {
   const [theme, setTheme] = useState("dark");
 
-  useLayoutEffect(() => {
-    console.log("useLayoutEffect")
-  }, [theme])
+  const firstRender = useRef(true);
+
+  useEffect(() => {
+    if (firstRender.current) {
+      firstRender.current = false;
+      return;
+    }
+  }, [theme]);
 
   const currentTheme = useMemo(() => {
     return themes[theme] || themes.dark;
