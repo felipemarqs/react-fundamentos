@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 
 import { useTheme } from "styled-components";
 import Header from "../Header/index.jsx";
-import PostList from "../../pages/Posts/index.jsx";
+import PostList from "../../pages/PostList/index.jsx";
 import Footer from "../Footer/index.jsx";
 import Routes from "../../Routes.js";
 
@@ -20,8 +20,7 @@ const Layout = ({ onToggleTheme, selectedTheme }) => {
     <>
       <Header onToggleTheme={onToggleTheme} selectedTheme={selectedTheme} />
       <Routes />
-      <Footer on
-      ToggleTheme={onToggleTheme} selectedTheme={selectedTheme} />
+      <Footer onToggleTheme={onToggleTheme} selectedTheme={selectedTheme} />
     </>
   );
 };
