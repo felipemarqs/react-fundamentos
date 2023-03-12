@@ -20,7 +20,8 @@ const Layout = ({ onToggleTheme, selectedTheme }) => {
     <>
       <Header onToggleTheme={onToggleTheme} selectedTheme={selectedTheme} />
       <Routes />
-      <Footer onToggleTheme={onToggleTheme} selectedTheme={selectedTheme} />
+      <Footer on
+      ToggleTheme={onToggleTheme} selectedTheme={selectedTheme} />
     </>
   );
 };
