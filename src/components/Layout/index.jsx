@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter} from 'react-router-dom'
 
 import Header from "../Header/index.jsx";
 import Navbar from '../Navbar/index.jsx'
