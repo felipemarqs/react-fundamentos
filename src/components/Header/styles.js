@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.header`
-  background: ${({theme})=> theme.headerBackgroundColor};
+  background: ${({ theme }) => theme.colors.background};
   height: 100px;
   display: flex;
   align-items: center;
@@ -12,8 +12,11 @@ export const Container = styled.header`
   button {
     font-size: 16px;
     cursor: pointer;
-    cursor: pointer;
     background: transparent;
     border: none;
+  }
+
+  img {
+    width: 10%
   }
 `;

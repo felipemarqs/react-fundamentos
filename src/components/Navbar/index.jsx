@@ -3,10 +3,10 @@ import { Container } from './styles'
 import { Link } from 'react-router-dom'
 
 
-const Navbar = ( ) => {
+const Navbar = () => {
     return (
         <Container>
-            <Link to="/">HOME</Link>
+            <Link to="/">Home</Link>
             <Link to="/posts">POST</Link>
             <Link to="/posts/01291291">POST</Link>
         </Container>

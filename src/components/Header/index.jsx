@@ -1,10 +1,12 @@
-import React  from "react";
-import {useHistory} from 'react-router-dom'
+import React from "react";
+import { useHistory } from 'react-router-dom'
 
-import {Container} from './styles.js'
+import { Container } from './styles.js'
 
-const Header = ({onToggleTheme, selectedTheme}) => {
- 
+import icon from '../../assets/icon.png'
+
+const Header = ({ onToggleTheme, selectedTheme }) => {
+
 
   const history = useHistory()
   console.log(history)
@@ -14,12 +16,11 @@ const Header = ({onToggleTheme, selectedTheme}) => {
   }
   return (
     <>
-    <Container>
-      <h1> Felipe's Blog </h1>
-      <button type="button" onClick={onToggleTheme}>{selectedTheme === 'dark' ? <span>🌞</span> : <span>🌙</span>}</button>
-      <button onClick={handleNavigation} style={{color: '#fff'}}>Clicar</button>
-    </Container>
-      
+      <Container>
+        <img src={icon} />
+        <h1> Fundamentos do React  </h1>
+        <button type="button" onClick={onToggleTheme}>{selectedTheme === 'dark' ? <span>🌞</span> : <span>🌙</span>}</button>
+      </Container>
     </>
   );
 };

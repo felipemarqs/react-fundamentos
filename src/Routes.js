@@ -11,18 +11,20 @@ const Routes = () => {
 
   const location = useLocation()
   const transitions = useTransition(location, {
-    from : { opacity: 0 , transform: 'translateY(50px)' },
-    enter: { opacity: 1 , transform: 'translateY(0px)' },
-    leave: {opacity: 0 , transform: 'translateY(50px)' },
+    from: { opacity: 0, transform: 'translateY(50px)' },
+    enter: { opacity: 1, transform: 'translateY(0px)' },
+    leave: { opacity: 0, transform: 'translateY(50px)' },
   })
-  
+
   return transitions((props, item) => (
     <animated.div style={props}>
-    <Switch location={item}>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/posts" component={Posts} />
-        <Route path="/posts/id" component={Post} />
-        <Route component={NotFound}/> 
+      <Switch location={item}>
+        <Routes>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/posts" component={Posts} />
+          <Route path="/posts/id" component={Post} />
+          <Route component={NotFound} />
+        </Routes>
       </Switch>
     </animated.div>
   ));
