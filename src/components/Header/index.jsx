@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom'
 
 import { Container } from './styles.js'
 
-import icon from '../../assets/icon.png'
+
 
 const Header = ({ onToggleTheme, selectedTheme }) => {
 
@@ -17,7 +17,6 @@ const Header = ({ onToggleTheme, selectedTheme }) => {
   return (
     <>
       <Container>
-        <img src={icon} />
         <h1> Fundamentos do React  </h1>
         <button type="button" onClick={onToggleTheme}>{selectedTheme === 'dark' ? <span>🌞</span> : <span>🌙</span>}</button>
       </Container>

@@ -19,12 +19,12 @@ const Routes = () => {
   return transitions((props, item) => (
     <animated.div style={props}>
       <Switch location={item}>
-        <Routes>
+        <>
           <Route exact path="/" component={Home} />
           <Route exact path="/posts" component={Posts} />
           <Route path="/posts/id" component={Post} />
           <Route component={NotFound} />
-        </Routes>
+        </>
       </Switch>
     </animated.div>
   ));
